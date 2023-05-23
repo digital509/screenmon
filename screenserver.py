@@ -43,7 +43,7 @@ def start_server():
                         client_socket.sendall(size_bytes)
 
                         # Send the image data in smaller chunks
-                        chunk_size = 1024
+                        chunk_size = 8192 #1024
                         remaining_bytes = len(image_data)
                         while remaining_bytes > 0:
                             send_size = min(chunk_size, remaining_bytes)
